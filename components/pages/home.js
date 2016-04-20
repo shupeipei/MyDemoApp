@@ -5,8 +5,7 @@ import React, {
     ListView,
     Image,
     Text,
-    View,
-    Alert
+    View
 } from 'react-native'
 
 import HomeJobCell from './list/home-job-cell'
@@ -43,15 +42,11 @@ export default class HomePage extends Component {
     _selectJob(job: Object) {
         const {navigator} = this.props
 
-        console.log('into _selectJob with navigator', JSON.stringify(navigator))
-
-        Alert.alert( '提示', '正在开发中...' + JSON.stringify(this.props), [ {text: '确定', onPress: () => console.log('into _selectJob Ok!')} ])
-
         if (navigator) {
             navigator.push({
                 name: 'HomeJobDetail',
                 component: HomeJobDetail,
-                params: {job: job}
+                params: {job}
             })
         }
     }

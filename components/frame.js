@@ -34,6 +34,7 @@ const HOME_TAB = 'homeTab',
 export default class Frame extends Component {
     constructor(props) {
         super(props)
+
         this.state = {
             selectedTab: HOME_TAB,
             tabBarShow:true
@@ -67,20 +68,21 @@ export default class Frame extends Component {
     }
 
     _createChildView(tag) {
-        let renderView
+        let renderView,
+            {navigator} = this.props
 
         switch (tag) {
             case HOME_TAB:
-                renderView = <HomePage />
+                renderView = <HomePage navigator={navigator} />
                 break
             case MESSAGE_TAB:
-                renderView = <Message />
+                renderView = <Message navigator={navigator} />
                 break
             case DISCOVER_TAB:
-                renderView = <Discover />
+                renderView = <Discover navigator={navigator} />
                 break
             case ME_TAB:
-                renderView = <Me />
+                renderView = <Me navigator={navigator} />
                 break
             default:
                 break

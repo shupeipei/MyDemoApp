@@ -42,14 +42,12 @@ export default class Discover extends Component {
             navigator.push({
                 title: discover.title,
                 component: DiscoverDetail,
-                passProps: {discover}
+                params: {discover}
             })
         }
     }
 
     _renderRow(discoverData) {
-        console.log('into discover _renderRow function with this = ', this)
-
         return (
             <DiscoverCell onSelect={()=> this._selectDiscover(discoverData)} discoverData={discoverData}/>
         )
