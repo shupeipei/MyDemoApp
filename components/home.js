@@ -1,9 +1,6 @@
 import React,{
     Component,
-    StyleSheet,
-    Navigator,
-    Text,
-    View
+    Navigator
 } from 'react-native'
 
 import HomePage from './pages/home'
@@ -12,7 +9,7 @@ export default class Home extends Component {
     render() {
         let defaultName = 'HomePage',
             defaultComponent = HomePage
-
+        
         return (<Navigator
             initialRoute={{ name: defaultName, component: defaultComponent }}
             configureScene={(route)=> {
